@@ -1,0 +1,14 @@
+<div class="todo">
+    <span class="todo-name">
+        {{ todo.name }}
+    </span>
+    <span class="todo-description">
+        {{ todo.description }}
+    </span>
+</div>
+<button 
+    class="delete-btn" 
+    (click)="deleteCurrentTodo(todo.id)"
+    > 
+    DELETE TODO
+</button>
