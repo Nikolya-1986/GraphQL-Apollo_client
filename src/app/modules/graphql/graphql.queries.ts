@@ -9,10 +9,29 @@ const GET_TODOS = gql`
         }
     }
 `
+const GET_TODO = gql`
+    query {
+        todo($id: Int!) {
+            id
+            name
+            description
+        }
+    }
+`
 
 const ADD_TODO = gql`
     mutation addTodo($name: String!, $description: String!) {
         addTodo(name: $name, description: $description) {
+            id
+            name
+            description
+        }
+    }
+`
+
+const UPDATE_TODO = gql`
+    mutation updateTodo($id: Int!, $name: String!, $description: String!) {
+        updateTodo(name: $name, description: $description) {
             id
             name
             description
@@ -28,4 +47,10 @@ const DELETE_TODO = gql`
     }
 `
 
-export {GET_TODOS, ADD_TODO, DELETE_TODO}
+export { 
+    GET_TODOS, 
+    GET_TODO, 
+    ADD_TODO, 
+    UPDATE_TODO, 
+    DELETE_TODO 
+}
